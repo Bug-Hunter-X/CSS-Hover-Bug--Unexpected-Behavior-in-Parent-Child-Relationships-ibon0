@@ -1,0 +1,21 @@
+The solution involves clarifying the specificity of the CSS selectors to ensure the child element's style is correctly applied during the parent's hover state.
+
+```css
+.parent {
+  background-color: lightblue;
+}
+
+.parent:hover {
+  background-color: lightgreen;
+}
+
+.parent .child {
+  background-color: lightcoral;
+}
+
+.parent:hover > .child {
+  background-color: lightpink !important; /* More specific selector */
+}
+```
+
+By using a more specific selector (`.parent:hover > .child`) or adjusting the order and specificity of CSS rules, we ensure that the child element's hover style overrides any potential conflicts and correctly changes its background color when the parent is hovered.
